@@ -1,0 +1,22 @@
+server:
+  servlet:
+    context-path: /companies-crud
+  port: '8081'
+
+spring:
+  datasource:
+    hikari:
+      maximum-pool-size: '5'
+      connection-timeout: '20000'
+    url: 'jdbc:postgresql://localhost:5432/companies'
+    username: developer
+    password: dev
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE

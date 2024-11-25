@@ -1,0 +1,55 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Información del proyecto -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.3.5</version>
+        <relativePath /> <!-- Mantener vacío para que use la versión de Maven Central -->
+    </parent>
+
+    <groupId>com.theakylino</groupId>
+    <artifactId>dummy-microservices-course</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <!-- Módulos hijos del proyecto -->
+        <module>ms-companies-crud</module>
+    </modules>
+
+    <properties>
+        <java.version>21</java.version>
+        <!-- Otras propiedades globales -->
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Definir dependencias comunes a los módulos hijos -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter</artifactId>
+                <!-- La versión no es necesaria aquí ya que se hereda del padre -->
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <!-- Plugins comunes para los módulos hijos -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
