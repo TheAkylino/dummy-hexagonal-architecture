@@ -1,1 +1,1 @@
-# dummy-hexagonal-architecture
+# dummy-microservices-course
