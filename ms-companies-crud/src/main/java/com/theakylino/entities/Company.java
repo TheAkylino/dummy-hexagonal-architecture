@@ -23,8 +23,10 @@ public class Company {
   private String name;
   private String founder;
   private String logo;
+
   @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
   private LocalDate foundationDate;
+
   @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REMOVE})
   @JoinColumn(name = "id_company", referencedColumnName = "id")
   private List<WebSite> webSites;
