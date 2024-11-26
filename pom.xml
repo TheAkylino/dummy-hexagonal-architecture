@@ -20,6 +20,7 @@
     <modules>
         <!-- Módulos hijos del proyecto -->
         <module>ms-companies-crud</module>
+        <module>registry-server</module>
     </modules>
 
     <properties>
