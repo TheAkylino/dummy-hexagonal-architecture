@@ -1,0 +1,21 @@
+server:
+  port: 7777
+spring:
+  profiles:
+    active: default
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/usuario/repo-config # URL del repositorio Git con los archivos de configuración
+          username: tu-usuario-git # Usuario (opcional si el repo es privado)
+          password: tu-password-git # Contraseña (opcional si el repo es privado)
+          default-label: main # Rama predeterminada a usar
+eureka:
+  instance:
+    instance-id: "${spring.application.name}:${random.value}"
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
